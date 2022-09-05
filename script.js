@@ -32,7 +32,7 @@ function onCountryApiSucess(countries = []) {
         CreateRegionLink(mainResponse);
     });
 
-    createCountriesCards(countries);
+    createCountriesCards(countries)
 
 
 
@@ -66,11 +66,11 @@ function onCountryApiSucess(countries = []) {
 
    const inputElement = document.querySelector("#searchCountry")
     inputElement .addEventListener('keyup',() => {
-        const searchValue = inputElement .value;
+        const searchValue = inputElement.value.toLowerCase();
         document.querySelector('.list-countries').innerHTML= '';
         if (searchValue){
             const searchCountries = countries.filter((country) =>  
-            country.name.includes(searchValue )
+            country.name.toLowerCase().includes(searchValue )
             
             );
             createCountriesCards(searchCountries);
@@ -163,7 +163,7 @@ function CreateCountryCards(country = {}) {
 
 
 
-            <div class="card-body">
+            <div class="card-body>
                 <h2 class="card-title"> ${country.name}</h2>
 
                 <table class="table table-bordered">
